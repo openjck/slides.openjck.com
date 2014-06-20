@@ -1,0 +1,3 @@
+[submodule "s/mozilla-internship-2011"]
+	path = s/mozilla-internship-2011
+	url = https://github.com/openjck/presentation-mozilla-internship-2011.git
