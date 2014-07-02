@@ -1,0 +1,699 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <title>Stylus and MDN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="../../themes/mozilla/styles/style.css">
+  <style>
+      #cover img {
+          display: block;
+          margin: 100px auto 0;
+      }
+
+      .code-example {
+          height: 80%;
+          width: 45%;
+          margin-right: 5%;
+      }
+
+      iframe {
+          height: 80%;
+          width: 100%;%;
+          margin: 0 auto;
+      }
+
+      .code-example h3 {
+          text-align: center;
+      }
+
+      .code-example {
+          float: left;
+      }
+
+      #look .code-example {
+          float: none;
+          margin: 0 auto;
+      }
+
+      div[id^="hof"].menu .code-example {
+          position: relative;
+          top: -10%;
+      }
+
+      div[id^="hof"].menu img {
+          height: 20%;
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          top: -80px;
+      }
+  </style>
+
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Stylus and MDN</h1>
+    <p>John Karahalis, openjck.com</p>
+  </header>
+
+  <div id="cover" class="slide"><div>
+    <section>
+      <header>
+        <h2>Stylus and MDN</h2>
+      </header>
+      <img src="img/stylus-logo.png" alt="Stylus logo" />
+      <small class="byline">John Karahalis, openjck.com</small>
+    </section>
+  </div></div>
+
+  <div class="slide" id="what"><div>
+    <section>
+      <header>
+        <h2>What is Stylus?</h2>
+      </header>
+      <ul class="inner">
+          <li class="active">CSS preprocessor used on MDN (and other Mozilla websites)</li>
+          <li>"Expressive, dynamic, robust"</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div class="slide" id="look"><div>
+    <section>
+      <header>
+        <h2>What does it look like?</h2>
+      </header>
+      <div class="code-example">
+          <iframe src="code-examples/selectors/parent-reference.styl.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="requirements"><div>
+    <section>
+      <header>
+        <h2>Technical requirements</h2>
+      </header>
+      Just the <code>stylus</code> binary!
+    </section>
+  </div></div>
+
+  <div class="slide" id="mdn-use"><div>
+    <section>
+      <header>
+        <h2>Using Stylus in MDN</h2>
+      </header>
+      <ol class="inner">
+          <li class="active">Add a stylesheet to the <a href="https://github.com/mozilla/kuma/tree/master/media/redesign/stylus">/media/redesign/stylus</a> directory</li>
+          <li>Add an entry to <code>MINIFY_BUNDLES</code> (<a href="https://github.com/mozilla/kuma/blob/master/settings.py#L659-661">Example</a>)</li>
+          <li>Add the stylesheet to a template (<a href="https://github.com/mozilla/kuma/blob/master/kuma/events/templates/events/calendar.html#L7">Example</a>)</li>
+          <li>To test, run <code>compile-stylesheets --watch</code> on your <em>host</em></li>
+      </ol>
+    </section>
+  </div></div>
+
+  <div class="slide" id="the-good"><div>
+    <section>
+      <header>
+        <h2>The Good</h2>
+      </header>
+      <ul class="inner">
+          <li class="active">Way better than just CSS (especially for maintenance)</li>
+          <li>Surprisingly powerful language features</li>
+          <li>Responsive team</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div class="slide" id="the-bad"><div>
+    <section>
+      <header>
+        <h2>The Bad</h2>
+      </header>
+      <ul class="inner">
+          <li class="active">No source maps (<a href="https://hacks.mozilla.org/2014/02/live-editing-sass-and-less-in-the-firefox-developer-tools/">Less and SASS have them</a>)</li>
+          <li>Can be buggy (<a href="https://github.com/LearnBoost/stylus/issues/1217">conditional</a>, <a href="https://github.com/mozilla/kuma/commit/c6e0d5c49e8aa9f4abfb246cdd5a178117034801">bidi-style</a>, <a href="https://github.com/mozilla/kuma/commit/61741dd3c0d43a844d7299799174e4d6417e3cfa">@font-face linebreaks</a>)</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div class="slide" id="language-features"><div>
+    <section>
+      <header>
+        <h2>Language features</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide" id="syntax-1"><div>
+    <section>
+      <header>
+        <h2>Syntax choice</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/syntax/css-syntax.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/syntax/css-syntax.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="syntax-2"><div>
+    <section>
+      <header>
+        <h2>Syntax choice</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/syntax/python-syntax.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/syntax/python-syntax.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="selectors-1"><div>
+    <section>
+      <header>
+        <h2>Selectors</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/selectors/descendant.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/selectors/descendant.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="selectors-2"><div>
+    <section>
+      <header>
+        <h2>Selectors</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/selectors/complex.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/selectors/complex.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="selectors-3"><div>
+    <section>
+      <header>
+        <h2>Selectors</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/selectors/parent-reference.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/selectors/parent-reference.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="variables-1"><div>
+    <section>
+      <header>
+        <h2>Variables</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/variables/variables.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/variables/variables.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="variables-2"><div>
+    <section>
+      <header>
+        <h2>Variables</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/variables/property-variables.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/variables/property-variables.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="bare-words-1"><div>
+    <section>
+      <header>
+        <h2>Bare words</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/bare-words/bare-words.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/bare-words/bare-words.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="bare-words-2"><div>
+    <section>
+      <header>
+        <h2>Bare words</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/bare-words/quoted-words.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/bare-words/quoted-words.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="functions-1"><div>
+    <section>
+      <header>
+        <h2>Functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/functions/vendorize.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/functions/vendorize.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="functions-2"><div>
+    <section>
+      <header>
+        <h2>Functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/functions/default-argument.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/functions/default-argument.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="functions-3"><div>
+    <section>
+      <header>
+        <h2>Functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/functions/named-arguments.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/functions/named-arguments.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="functions-4"><div>
+    <section>
+      <header>
+        <h2>Functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/functions/function-selector.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/functions/function-selector.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="conditionals"><div>
+    <section>
+      <header>
+        <h2>Conditionals</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/conditionals/conditionals.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/conditionals/conditionals.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="iteration"><div>
+    <section>
+      <header>
+        <h2>Iteration</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/iteration/iteration.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/iteration/iteration.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="hashes"><div>
+    <section>
+      <header>
+        <h2>Hashes</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/hashes/hashes.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/hashes/hashes.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="extension-1"><div>
+    <section>
+      <header>
+        <h2>Extension</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/extension/standard-extension.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/extension/standard-extension.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="extension-2"><div>
+    <section>
+      <header>
+        <h2>Extension</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/extension/placeholder-extension.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/extension/placeholder-extension.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="extension-3"><div>
+    <section>
+      <header>
+        <h2>Extension</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/extension/function-extension.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/extension/function-extension.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="import-1"><div>
+    <section>
+      <header>
+        <h2>Imports</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/import/layout.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/import/layout.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="import-2"><div>
+    <section>
+      <header>
+        <h2>Imports</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/import/listing.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/import/listing.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="menu slide" id="hof-1"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-normal-function.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-normal-function.css.html"></iframe>
+      </div>
+      <img src="img/menu-rendered/normal.png" alt="Green navigational menu" />
+    </section>
+  </div></div>
+
+  <div class="menu slide" id="hof-2"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-gray.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-gray.css.html"></iframe>
+      </div>
+      <img src="img/menu-rendered/gray.png" alt="Gray navigational menu" />
+    </section>
+  </div></div>
+
+  <div class="menu slide" id="hof-3"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-inverted.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-inverted.css.html"></iframe>
+      </div>
+      <img src="img/menu-rendered/inverted.png" alt="Inverted navigational menu" />
+    </section>
+  </div></div>
+
+  <div class="menu slide" id="hof-4"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-blue.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/menu/menu-blue.css.html"></iframe>
+      </div>
+      <img src="img/menu-rendered/blue.png" alt="Blue navigational menu" />
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="hof-5"><div>
+    <section>
+      <header>
+        <h2>But wait...</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="hof-6"><div>
+    <section>
+      <header>
+        <h2>There's more!</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide" id="hof-7"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/map.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/map.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="hof-8"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/filter.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/filter.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide" id="hof-9"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/reduce.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/list-processing/reduce.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="hof-10"><div>
+    <section>
+      <header>
+        <h2>One more thing...</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide" id="hof-11"><div>
+    <section>
+      <header>
+        <h2>Higher-order functions</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">We have lists...</li>
+        <li>We have filter...</li>
+        <li>We have numbers...</li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div class="slide" id="quicksort"><div>
+    <section>
+      <header>
+        <h2>Quicksort in Stylus</h2>
+      </header>
+      <div class="code-example">
+          <h3>Stylus</h3>
+          <iframe src="code-examples/higher-order-functions/quicksort/quicksort.styl.html"></iframe>
+      </div>
+      <div class="code-example">
+          <h3>Compiled CSS</h3>
+          <iframe src="code-examples/higher-order-functions/quicksort/quicksort.css.html"></iframe>
+      </div>
+    </section>
+  </div></div>
+
+
+  <div class="slide shout" id="crazy-1"><div>
+    <section>
+      <header>
+        <h2>Pretty neat!</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="crazy-2"><div>
+    <section>
+      <header>
+        <h2>But if you actually do this...</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="crazy-3"><div>
+    <section>
+      <header>
+        <h2>You're crazy</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide shout" id="crazy-4"><div>
+    <section>
+      <header>
+        <h2>Don't actually do this</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <div class="slide" id="Questions"><div>
+    <section>
+      <header>
+        <h2>Questions?</h2>
+      </header>
+    </section>
+  </div></div>
+
+  <script src="../../scripts/script.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
