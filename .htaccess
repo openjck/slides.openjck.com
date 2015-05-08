@@ -2,3 +2,7 @@
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve WebM videos with the correct type to encourage browsers to play them
+# directly.
+AddType video/webm .webm
