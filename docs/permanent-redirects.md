@@ -13,8 +13,8 @@ the corresponding *To* URLs.
     </thead>
     <tbody>
         <tr>
-            <td><a href="http://slides.openjck.com">http://slides.openjck.com</a></td>
-            <td><a href="https://slides.openjck.com/">https://slides.openjck.com/</a></td>
+            <td>http://slides.openjck.com*</td>
+            <td>https://slides.openjck.com[match]</td>
         </tr>
     </tbody>
 </table>
