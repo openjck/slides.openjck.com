@@ -13,6 +13,6 @@
 [[redirects]]
 
     from = "/*"
-    to = "https://openjck.com"
+    to = "https://www.johnkarahalis.com"
     status = 302
     force = true
